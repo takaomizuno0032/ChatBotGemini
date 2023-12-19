@@ -49,10 +49,10 @@ export async function initGemini(): Promise<void> {
     });
 }
 
-export async function chatGemni(prompt: string) {
+export async function chatGemni(prompt: string): Promise<string> {
     if (!chat) {
         console.log("Please init chat session.");
-        return;
+        return "";
     }
 
     const result = await chat.sendMessageStream(prompt);
@@ -63,4 +63,5 @@ export async function chatGemni(prompt: string) {
         console.log(chunkText);
         text += chunkText;
     }
+    return text;
 }
