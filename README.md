@@ -1,8 +1,8 @@
 # Project name
 
-Takao Gemini Bot
+Gemini Bot
 
-This is a bot imitating with Takao
+This is a bot imitating with you
 
 ## Abstract
 
