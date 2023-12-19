@@ -56,3 +56,6 @@ yarn start
 ```example
 http://localhost:3000/api/chat?prompt=What is your name
 ```
+
+## LICENSE
+Copyright (c) 2023 Takao Mizuno
