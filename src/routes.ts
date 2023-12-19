@@ -7,6 +7,9 @@ export function registerRoutes(app: Express) {
     })
 
     app.get('/api/chat', async (req, res) => {
+        let result = {
+            text: ""
+        }
         const prompt = req.query.prompt?.toString();
         if (prompt == undefined) {
             res.send("Please enter some strings.");
@@ -16,7 +19,12 @@ export function registerRoutes(app: Express) {
         console.log("Prompt:");
         console.log(prompt);
 
-        chatGemni(prompt);
-        res.send("OK");
+        result.text = await chatGemni(prompt);
+        res.send(JSON.stringify(result));
+    })
+
+    //TODO: stream
+    app.get('/appi/chat/stream', async (req, res) => {
+        console.log("implementing.");
     })
 }
